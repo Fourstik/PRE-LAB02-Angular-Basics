@@ -1,0 +1,27 @@
+<div class="profile-card">
+  <h2>A Little About Me</h2>
+  <p class="bio">{{ bio }}</p>
+
+  <div class="card-section">
+    <h3>Technical Proficiencies</h3>
+    @for (cat of techCategories; track cat.category) {
+      <div class="category-block">
+        <span class="category-title">{{ cat.category }}:</span>
+        <div class="tag-group">
+          @for (item of cat.items; track item) {
+            <span class="tag tech-tag">{{ item }}</span>
+          }
+        </div>
+      </div>
+    }
+  </div>
+
+  <div class="card-section">
+    <h3>Interests & Hobbies</h3>
+    <div class="tag-group">
+      @for (hobby of interests; track hobby) {
+        <span class="tag">{{ hobby }}</span>
+      }
+    </div>
+  </div>
+</div>
