@@ -1,33 +1,127 @@
-<main class="resume">
-<header class="intro">
-  <h1>{{ fullName }}</h1>
-  <p class="motto">{{ motto }}</p>
-  <p>
-    {{ location }} |
-    {{ phone }} |
-    <a [href]="'mailto:' + email">{{ email }}</a>
-  </p>
-</header>
 
-  <section>
+<div class="cv-container">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="profile">
+      <h1>Malabanan, Asher C. </h1>
+      <h2>Future Web Developer</h2>
+      <p>Angeles City, Pampanga, Philippines</p>
+    </div>
+
+    <div class="contact">
+      <p>Email: malabananasher05@gmail.com</p>
+      <p>Phone: 0906-944-9460</p>
+      <p>GitHub: https://github.com/malabananasher05-netizen</p>
+    </div>
+  </header>
+
+  <!-- Personal Profile -->
+  <section class="section">
     <h2>Personal Profile</h2>
-    <p>{{ profile }}</p>
+    <p>
+      I am an aspiring web developer who is passionate about
+      technology, creativity, and building useful digital
+      experiences. My goal is to develop responsive,
+      user-friendly, and visually appealing websites using
+      modern web development tools. I am continuously
+      improving my knowledge of HTML, CSS, JavaScript,
+      TypeScript, and Angular. I enjoy learning new
+      programming concepts, solving problems, and exploring
+      different ways to improve website functionality.
+      I aim to gain practical experience, collaborate with
+      other developers, and eventually become a skilled
+      professional web developer who can contribute to
+      meaningful projects.
+    </p>
   </section>
 
-  <app-profile-card></app-profile-card>
+  <div class="cv-container">
 
-  <section>
+  <section class="profile-card">
+    <h2>{{ cardTitle }}</h2>
+
+    <p class="bio">{{ description }}</p>
+
+    <h3>Personal Information</h3>
+    <p>Course: BS Information Technology</p>
+    <p>Location: Angeles City, Philippines</p>
+
+    <h3>Key Skills</h3>
+
+    <div class="tag-group">
+      <span class="tag">HTML</span>
+      <span class="tag">CSS</span>
+      <span class="tag">JavaScript</span>
+      <span class="tag">TypeScript</span>
+      <span class="tag">Angular</span>
+    </div>
+  </section>
+
+</div>
+
+  <!-- Key Skills -->
+  <section class="section">
     <h2>Key Skills</h2>
-    <ul>
-      @for (skill of skills; track skill) {
-        <li>{{ skill }}</li>
-      }
+    <ul class="skills">
+      <li>Problem Solving</li>
+      <li>Communication</li>
+      <li>Teamwork</li>
+      <li>Time Management</li>
+      <li>Critical Thinking</li>
+      <li>Creativity</li>
+      <li>Adaptability</li>
+      <li>Attention to Detail</li>
+      <li>Self-Learning</li>
+      <li>Organization</li>
     </ul>
   </section>
 
-  <section class="interaction">
-    <h2>Angular Interaction</h2>
-    <p>{{ message }}</p>
-    <button (click)="showMessage()">Click Me</button>
+  <!-- Technical Proficiencies -->
+  <section class="section">
+    <h2>Technical Proficiencies</h2>
+
+    <div class="technical">
+      <h3>Programming Languages</h3>
+      <p>HTML, CSS, JavaScript, TypeScript</p>
+    </div>
+
+    <div class="technical">
+      <h3>Frameworks and Libraries</h3>
+      <p>Angular, Bootstrap</p>
+    </div>
+
+    <div class="technical">
+      <h3>Development Tools</h3>
+      <p>Visual Studio Code, Git, GitHub, Chrome DevTools</p>
+    </div>
   </section>
-</main>
+
+  <!-- Education -->
+  <section class="section">
+    <h2>Education</h2>
+    <h3>HOLY ANGEL UNIVERSITY</h3>
+    <p> IT / WEB DEVELOPER </p>
+    <p>Year Level: 3RD YEAR SECOND system_update</p>
+  </section>
+   <section class="button-card">
+
+    <h2>Button Interaction</h2>
+
+    <p>Click the button to test the interaction.</p>
+
+    <button (click)="onClickMe()">
+      Click Me
+    </button>
+
+    <p class="click-message" *ngIf="clickCount > 0">
+      You clicked the button {{ clickCount }} time(s).
+    </p>
+
+  </section>
+
+  <footer>
+    <p>© 2026 Malabanan, Asher C. | Personal CV Website</p>
+  </footer>
+
+</div>

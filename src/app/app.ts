@@ -1,45 +1,29 @@
+
 import { Component } from '@angular/core';
-import { ProfileCard } from './profile-card/profile-card';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ProfileCard],
+  imports: [],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
+
 export class App {
-  fullName = 'Rich Cristoff C. Incognito';
-  motto = 'Sharp • Polished • Brilliant';
-  location = 'Mabalacat, Pampanga';
-  email = 'rccincognito@gmail.com';
-  phone = '0915 713 1301';
 
-  profile = 'I am a 3rd year web development student in Holy Angel University. I am generally interested in technology as a whole, but I have decided to embark on a journey in designing and developing systems that are both visually appealing and user-friendly. My goal is to master modern frameworks, write clean and maintainable code, and build intuitive digital experiences that solve real-world problems.';
+  cardTitle = 'My Personal Profile';
 
-  skills = [
-    'HTML5 & CSS',
-    'JavaScript',
-    'TypeScript',
-    'Angular',
-    'Responsive Design',
-    'Git & GitHub',
-    'UI/UX Prototyping',
-    'Communication',
-    'Team Leading'
-  ];
+  description = `Good day! This is my Profile Card, created using Angular, HTML, and CSS. It displays my personal information, key skills, and technical proficiencies.
 
-  technicalCategories = [
-    { name: 'Frontend Languages', items: ['HTML5', 'CSS3', 'JavaScript', 'TypeScript'] },
-    { name: 'Frameworks & Libraries', items: ['Angular', 'Bootstrap'] },
-    { name: 'Tools & Workflow', items: ['Git', 'GitHub', 'VS Code', 'npm'] }
-  ];
+I used Angular interpolation to display the information dynamically. For the design, I chose a dark background with neon green accents to give it a modern and professional appearance.
 
-  message = 'Welcome to my profile!';
-  clickCount = 0;
+I also added hover effects and responsive styling to make the profile card more interactive and user-friendly.
 
-  showMessage() {
+That's all for my Profile Card. Thank you!`;
+
+ clickCount = 0;
+
+  onClickMe() {
     this.clickCount++;
-    this.message = `You clicked the button ${this.clickCount} time(s).`;
   }
 }
