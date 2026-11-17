@@ -1,29 +1,43 @@
-
 import { Component } from '@angular/core';
+import { Header } from './header/header';
+import { ProfileCard } from './profile-card/profile-card';
+import { Skills } from './skills/skills';
+import { Footer } from './footer/footer';
+import { Proficiency } from './proficiency';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [],
+  imports: [Header, ProfileCard, Skills, Footer],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-
 export class App {
+  // The parent (App) owns all CV data and passes it down to the children.
+  fullName = 'Rich Cristoff C. Incognito';
+  location = 'Mabalacat, Pampanga';
+  email = 'rccincognito@gmail.com';
+  phone = '0913 315 3967';
 
-  cardTitle = 'My Personal Profile';
+  profile = 'I am a student interested in web development. I enjoy learning new technologies and building useful applications.';
 
-  description = `Good day! This is my Profile Card, created using Angular, HTML, and CSS. It displays my personal information, key skills, and technical proficiencies.
+  skills = [
+    'HTML and CSS',
+    'JavaScript',
+    'TypeScript',
+    'Angular'
+  ];
 
-I used Angular interpolation to display the information dynamically. For the design, I chose a dark background with neon green accents to give it a modern and professional appearance.
+  proficiencies: Proficiency[] = [
+    { tool: 'Visual Studio Code', level: 'Advanced' },
+    { tool: 'Git and GitHub', level: 'Intermediate' },
+    { tool: 'Node.js and npm', level: 'Intermediate' },
+    { tool: 'Angular CLI', level: 'Beginner' }
+  ];
 
-I also added hover effects and responsive styling to make the profile card more interactive and user-friendly.
+  message = 'Click any skill above to select it.';
 
-That's all for my Profile Card. Thank you!`;
-
- clickCount = 0;
-
-  onClickMe() {
-    this.clickCount++;
+  // Runs when the Skills component emits a skillSelected event.
+  onSkillSelected(skill: string) {
+    this.message = `You selected: ${skill}`;
   }
 }

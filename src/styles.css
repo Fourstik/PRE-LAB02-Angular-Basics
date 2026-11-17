@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(57, 255, 20, 0.15), transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(57, 255, 20, 0.10), transparent 40%),
+    linear-gradient(135deg, #0b0d12, #0f2a1a, #0b1a2a, #0b0d12);
+  background-size: auto, auto, 400% 400%;
+  animation: bgShift 18s ease infinite;
+}
+
+@keyframes bgShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body { animation: none; }
+}

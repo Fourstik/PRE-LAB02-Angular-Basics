@@ -1,58 +1,27 @@
+<div class="profile-card">
+  <h2>A Little About Me</h2>
+  <p class="bio">{{ bio }}</p>
 
-<section class="profile-card">
-
-  <h2>{{ cardTitle }}</h2>
-
-  <p class="bio">{{ description }}</p>
-
-  <h3>Personal Information</h3>
-  <div class="category-block">
-    <span class="category-title">Course</span>
-    <p>BS Information Technology</p>
+  <div class="card-section">
+    <h3>Technical Proficiencies</h3>
+    @for (cat of techCategories; track cat.category) {
+      <div class="category-block">
+        <span class="category-title">{{ cat.category }}:</span>
+        <div class="tag-group">
+          @for (item of cat.items; track item) {
+            <span class="tag tech-tag">{{ item }}</span>
+          }
+        </div>
+      </div>
+    }
   </div>
 
-  <div class="category-block">
-    <span class="category-title">Location</span>
-    <p>Angeles City, Philippines</p>
-  </div>
-
-  <h3>Key Skills</h3>
-  <div class="tag-group">
-    <span class="tag">Problem Solving</span>
-    <span class="tag">Communication</span>
-    <span class="tag">Teamwork</span>
-    <span class="tag">Creativity</span>
-    <span class="tag">Time Management</span>
-  </div>
-
-  <h3>Technical Proficiencies</h3>
-
-  <div class="category-block">
-    <span class="category-title">Programming Languages</span>
+  <div class="card-section">
+    <h3>Interests & Hobbies</h3>
     <div class="tag-group">
-      <span class="tag tech-tag">HTML</span>
-      <span class="tag tech-tag">CSS</span>
-      <span class="tag tech-tag">JavaScript</span>
-      <span class="tag tech-tag">TypeScript</span>
+      @for (hobby of interests; track hobby) {
+        <span class="tag">{{ hobby }}</span>
+      }
     </div>
   </div>
-
-  <div class="category-block">
-    <span class="category-title">Frameworks</span>
-    <div class="tag-group">
-      <span class="tag tech-tag">Angular</span>
-      <span class="tag tech-tag">Bootstrap</span>
-    </div>
-  </div>
-
-  <div class="category-block">
-    <span class="category-title">Development Tools</span>
-    <div class="tag-group">
-      <span class="tag tech-tag">VS Code</span>
-      <span class="tag tech-tag">GitHub</span>
-    </div>
-  </div>
-
-  <p class="tag">Angular 22 • Reusable Component</p>
-
-</section>
+</div>
